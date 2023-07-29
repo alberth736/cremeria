@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="login-container">
+    <div class="form-title">Iniciar Sesión</div>
+    <div class="form-subtitle">
+      Ingresa tus datos para iniciar sesión en tu cuenta
+    </div>
+
+    <div class="img-container">
+      <img
+        src="https://i0.wp.com/www.merkbastos.com/wp-content/uploads/2021/12/Cremeria.png?fit=908%2C700&ssl=1"
+        alt="Imagen de encabezado"
+        width="200"
+      />
+    </div>
+    <input
+      type="email"
+      [(ngModel)]="emailValue"
+      class="input"
+      placeholder="Correo electrónico"
+    />
+    <div class="error" *ngIf="emailErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ emailErrorMessage }}</div>
+    </div>
+    <div class="spacer" *ngIf="!emailErrorMessage"></div>
+    <input
+      [(ngModel)]="passwordValue"
+      type="password"
+      class="input"
+      placeholder="Contraseña"
+    />
+    <div class="error" *ngIf="passwordErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ passwordErrorMessage }}</div>
+    </div>
+    <div class="spacer" *ngIf="!passwordErrorMessage"></div>
+
+    <button (click)="onSubmit()" class="submit-button">Iniciar Sesión</button>
+
+    <div class="register-link">
+      ¿No tienes cuenta?
+      <a routerLink="/register"> Regístrate aquí.</a>
+    </div>
+  </div>
+</div>

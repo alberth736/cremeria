@@ -1,0 +1,143 @@
+.container {
+  background: #fafafa;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edeae4;
+}
+
+.login-container {
+  border-radius: 26px;
+  border: 1px solid #d6d6d6;
+  background: #fff;
+  width: 537.995px;
+  padding: 60px 40px;
+  min-height: 200px;
+}
+
+.form-title {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.form-subtitle {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+.input {
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  background: #fff;
+  box-shadow: 0px 10px 40px 0px rgba(174, 174, 174, 0.2);
+  height: 50px;
+  width: -webkit-fill-available;
+  padding: 0px 12px;
+
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input::placeholder {
+  color: #c4c4c4;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.submit-button {
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  background: #0016df;
+  box-shadow: 0px 10px 40px 0px rgba(174, 174, 174, 0.2);
+  height: 50px;
+  width: -webkit-fill-available;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: red;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 12px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.spacer {
+  height: 12px;
+}
+
+.register-link {
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.bottom-text a {
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: #333;
+}
+
+.img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+img {
+  width: 30%;
+  border-radius: 26px;
+  background: #fff;
+  padding: 60px 40px;
+  margin: 0 auto;
+}

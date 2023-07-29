@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.product-name {
+  flex: 1;
+}

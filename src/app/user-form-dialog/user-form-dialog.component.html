@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ user ? "Editar Usuario" : "Agregar Usuario" }}</h2>
+
+<mat-dialog-content [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field *ngIf="user === null">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Dirección</mat-label>
+    <input matInput formControlName="address" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="phone" />
+  </mat-form-field>
+
+  <mat-form-field *ngIf="user === null">
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" formControlName="password" />
+  </mat-form-field>
+
+  <mat-form-field *ngIf="user === null">
+    <mat-label>Confirmar Contraseña</mat-label>
+    <input matInput type="password" formControlName="confirmPassword" />
+  </mat-form-field>
+
+  <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [disabled]="formGroup.invalid" (click)="onSubmit()">
+    {{ user ? "Guardar Cambios" : "Agregar" }}
+  </button>
+</mat-dialog-actions>

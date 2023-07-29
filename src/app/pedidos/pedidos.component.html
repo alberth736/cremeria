@@ -1,0 +1,99 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/home']">
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </a>
+      <a mat-list-item [routerLink]="['/usuarios']">
+        <mat-icon>people</mat-icon> Usuarios
+      </a>
+      <a mat-list-item [routerLink]="['/pedidos']">
+        <mat-icon>shopping_cart</mat-icon> Pedidos
+      </a>
+      <a mat-list-item [routerLink]="['/productos']">
+        <mat-icon>inventory</mat-icon> Productos
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      <img
+        src="https://i0.wp.com/www.merkbastos.com/wp-content/uploads/2021/12/Cremeria.png?fit=908%2C700&ssl=1"
+        height="30px"
+        class="logo"
+      />
+      <span class="title">Cremería</span>
+      <span class="spacer"></span>
+      <button mat-button (click)="cerrarSesion()">Cerrar sesión</button>
+    </mat-toolbar>
+    <div class="title-container">
+      <h1>Pedidos</h1>
+    </div>
+    <div class="container">
+      <button mat-raised-button color="primary" (click)="openDialog()">
+        Crear pedido
+      </button>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef>Usuario</th>
+            <td mat-cell *matCellDef="let element">{{ element.user.name }}</td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="products">
+            <th mat-header-cell *matHeaderCellDef>Cantidad de productos</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.products.length }}
+            </td>
+          </ng-container>
+
+          <!-- Address Column -->
+          <ng-container matColumnDef="created_at">
+            <th mat-header-cell *matHeaderCellDef>Creado en</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.created_at }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <!-- <button
+                mat-icon-button
+                color="primary"
+                (click)="editUser(element.id)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              -->
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="deleteOrder(element)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+        ></mat-paginator>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

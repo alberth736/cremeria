@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{ product ? "Editar Producto" : "Agregar Producto" }}</h2>
+
+<mat-dialog-content [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+    <input matInput formControlName="description" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Precio</mat-label>
+    <input matInput formControlName="price" type="number" />
+  </mat-form-field>
+
+  <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [disabled]="formGroup.invalid" (click)="onSubmit()">
+    {{ product ? "Guardar Cambios" : "Agregar" }}
+  </button>
+</mat-dialog-actions>

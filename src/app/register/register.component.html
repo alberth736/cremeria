@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="login-container">
+    <div class="form-title">Registro</div>
+    <div class="form-subtitle">
+      Ingresa tus datos para crear una cuenta en la tienda
+    </div>
+
+    <div class="img-container">
+      <img
+        src="https://i0.wp.com/www.merkbastos.com/wp-content/uploads/2021/12/Cremeria.png?fit=908%2C700&ssl=1"
+        alt="Imagen de encabezado"
+        width="200"
+      />
+    </div>
+
+    <input
+      type="text"
+      [(ngModel)]="name"
+      class="input"
+      placeholder="Nombre completo"
+    />
+    <div class="error" *ngIf="nameErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ nameErrorMessage }}</div>
+    </div>
+
+    <div class="spacer" *ngIf="!nameErrorMessage"></div>
+
+    <input
+      type="text"
+      [(ngModel)]="address"
+      class="input"
+      placeholder="Dirección"
+    />
+
+    <div class="error" *ngIf="addressErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ addressErrorMessage }}</div>
+    </div>
+
+    <div class="spacer" *ngIf="!addressErrorMessage"></div>
+
+    <input
+      type="number"
+      [(ngModel)]="phone"
+      class="input"
+      placeholder="Teléfono"
+    />
+
+    <div class="error" *ngIf="phoneErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ phoneErrorMessage }}</div>
+    </div>
+
+    <div class="spacer" *ngIf="!phoneErrorMessage"></div>
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      class="input"
+      placeholder="Correo electrónico"
+    />
+
+    <div class="error" *ngIf="emailErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ emailErrorMessage }}</div>
+    </div>
+    <div class="spacer" *ngIf="!emailErrorMessage"></div>
+    <input
+      [(ngModel)]="password"
+      type="password"
+      class="input"
+      placeholder="Contraseña"
+    />
+
+    <div class="error" *ngIf="passwordErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ passwordErrorMessage }}</div>
+    </div>
+    <div class="spacer" *ngIf="!passwordErrorMessage"></div>
+
+    <input
+      [(ngModel)]="confirmPassword"
+      type="password"
+      class="input"
+      placeholder="Confirmar contraseña"
+    />
+    <div class="error" *ngIf="confirmPasswordErrorMessage">
+      <i class="material-icons">error</i>
+      <div class="error-message">{{ confirmPasswordErrorMessage }}</div>
+    </div>
+    <div class="spacer" *ngIf="!confirmPasswordErrorMessage"></div>
+
+    <button (click)="onSubmit()" class="submit-button">Registrarse</button>
+
+    <div class="register-link">
+      ¿Ya tienes cuenta?
+      <a routerLink="/login"> Iniciar sesión aquí.</a>
+    </div>
+  </div>
+</div>

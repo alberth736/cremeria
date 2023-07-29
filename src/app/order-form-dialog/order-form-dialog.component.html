@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Nueva Orden</h1>
+
+<div mat-dialog-content>
+  <!--  <button mat-button color="primary" (click)="addProduct()">
+    Añadir Producto
+  </button> -->
+
+  <!-- Select of products -->
+  <div class="row">
+    <mat-form-field appearance="fill">
+      <mat-label>Producto</mat-label>
+      <mat-select [(ngModel)]="selectedProduct">
+        <mat-option *ngFor="let product of products" [value]="product">
+          {{ product.id }}.- {{ product.name }} ${{ product.price }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- if  selectedProduct is not null -->
+    <div *ngIf="selectedProduct">
+      <!-- Input of quantity -->
+      <mat-form-field appearance="fill">
+        <mat-label>Cantidad</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="selectedProductQuantity"
+          placeholder="Cantidad"
+        />
+      </mat-form-field>
+
+      <!-- Button to add product -->
+      <button mat-button color="primary" (click)="addProduct()">
+        Añadir Producto
+      </button>
+    </div>
+  </div>
+
+  <!-- List of products -->
+  <div class="column">
+    <div class="product" *ngFor="let product of orderProducts">
+      <div class="product-name">{{ product.product.name }}</div>
+      <div class="product-quantity">{{ product.quantity }}</div>
+      <div class="product-delete">
+        <mat-icon (click)="deleteProduct(product.product)">delete</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button color="primary" (click)="submitForm()">
+      Crear orden
+    </button>
+  </div>
+</div>
